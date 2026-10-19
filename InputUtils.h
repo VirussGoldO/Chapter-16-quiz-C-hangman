@@ -17,7 +17,7 @@ inline bool clearFailedExtraction()
 		{
 			std::exit(0); // Shut down the program now
 		}
-
+		
 		// Let's handle the failure
 		std::cin.clear(); // Put us back in 'normal' operation mode
 		ignoreLine();     // And remove the bad input
