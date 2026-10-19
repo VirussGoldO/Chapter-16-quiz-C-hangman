@@ -19,7 +19,7 @@ public:
 	void displayWinMessage() const;
 	void displayLossMessage() const;
 	void displayState() const;
-	void processInput();
+	void evaluateGuess();
 	int getLives() const;
 	bool testForWin() const;
 	void handleGameEnd() const;

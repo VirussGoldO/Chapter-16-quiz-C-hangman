@@ -64,7 +64,7 @@ char Session::getUserInput()
 }
 
 
-void Session::processInput()
+void Session::evaluateGuess()
 {
 	char c{ getUserInput() };
 	bool correctGuess{ false };

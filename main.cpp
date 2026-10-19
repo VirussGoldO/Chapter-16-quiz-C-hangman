@@ -9,7 +9,7 @@ int main()
 
 	while (current_session.getLives() > 0 && !current_session.testForWin())
 	{
-		current_session.processInput();
+		current_session.evaluateGuess();
 		current_session.displayState();
 	}
 
