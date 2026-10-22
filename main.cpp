@@ -3,17 +3,25 @@
 
 int main()
 {
-	Session current_session{};
-	current_session.displayIntro();
-	current_session.displayState();
-
-	while (current_session.getLives() > 0 && !current_session.testForWin())
+	bool playAgain{ true };
+	while (playAgain)
 	{
-		current_session.evaluateGuess();
-		current_session.displayState();
+		Settings::Difficulties d { Settings::selectGameDifficulty() };
+
+		Session s{ d };
+		s.displayIntro();
+		s.displayState();
+
+		while (s.getLives() > 0 && !s.testForWin())
+		{
+			char c{ s.getUserInput() };
+			s.evaluateGuess(c);
+			s.displayState();
+		}
+
+		playAgain = s.handleGameEnd();
 	}
 
-	current_session.handleGameEnd();
-
+	std::cout << "Thank you for playing! :)\n";
 	return 0;
 }
